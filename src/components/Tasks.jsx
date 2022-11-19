@@ -23,7 +23,7 @@ const tasks = [
 const Tasks = () => {
   return (
     <div>
-      
+      {tasks.map((task)=><h3>{task.id}</h3>)}
     </div>
   )
 }
