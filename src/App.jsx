@@ -1,10 +1,11 @@
 import React from 'react'
 import Header from "./components/Header"
 
+
 const App = () => {
   return (
     <div>App
-<Header title={1}/>
+<Header title={'siuu'}/>
     </div>
   )
 }
