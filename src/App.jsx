@@ -6,7 +6,7 @@ import "./index.css";
 const App = () => {
   return (
     <div className='container'>App
-<Header title={'siuu'}/>
+<Header />
     </div>
   )
 }
