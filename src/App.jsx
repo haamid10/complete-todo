@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from "./components/Header"
-// import index.css from React
-// import "./index.css";
+
+import "./index.css";
 
 const App = () => {
   return (
