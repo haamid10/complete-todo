@@ -1,15 +1,18 @@
+import React from 'react'
+// import Header from "./components/Header"
 
-function App() {
+// const App = () => {
+//   return (
+//     <div>App
+// <Header>dh</Header>
+//     </div>
+//   )
+// }
 
-  // const x="baasiro"
-  // const a = true
-  return (
-    <div className="App">
-      <h1> Hello From React</h1>
-      {/* <h2>hello //{x == 'baasiro' ?'yes' : 'mo'} */}
-      </h2>
-    </div>
-  );
+class App extends React.Component{
+  render(){
+    return <h1>hello from class</h1> 
+  }
 }
 
-export default App;
+export default App
