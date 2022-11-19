@@ -4,7 +4,7 @@ import Header from "./components/Header"
 const App = () => {
   return (
     <div>App
-<Header title='hello'/>
+<Header title={1}/>
     </div>
   )
 }
