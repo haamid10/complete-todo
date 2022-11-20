@@ -1,8 +1,15 @@
-import React from 'react'
 import { useState ,useEffect } from 'react';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 import Header from "./components/Header"
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
+import  Footer  from './components/Footer';
+import  About from "./components/About"
 
 const App = () => {
   const [showAdd, setShowAdd]= useState(false)
@@ -75,14 +82,18 @@ const addTask =async (task)=> {
   }
    
   return (
-    <div className='container'>App
-  <Header onAdd={()=>setShowAdd(!showAdd)}   show={showAdd}/>
-  {showAdd &&<AddTask onAdd={addTask}/>}
+<Router>
+  <div className='container'>App
+        <Header onAdd={()=>setShowAdd(!showAdd)}   show={showAdd}/>
+        {showAdd &&<AddTask onAdd={addTask}/>}
   
-   {tasks.length >0? (<Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask}/>):("no more tasks out there")
+        {tasks.length >0? (<Tasks tasks={tasks} onToggle=   {toggleReminder} onDelete={deleteTask}/>):("no more tasks out there")
    
-  }
-    </div>
+     }<Routes>
+      <Route path='./about ' component={About}/></Routes>
+        <Footer/>
+  </div>
+</Router>
   )
 
   }
