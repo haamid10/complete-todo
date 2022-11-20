@@ -37,7 +37,7 @@ const addTask = (task)=> {
 }
 //  delete task
    const deleteTask = (id)=>{
-    setTasks(tasks.reduce((task)=> task.id!==id))
+    setTasks(tasks.filter((task)=> task.id!==id))
     console.log('delete', id)
    }
   //  ontoggleReminder
@@ -54,12 +54,12 @@ const addTask = (task)=> {
   <Header />
   <AddTask onAdd={addTask}/>
   
-   <Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask}/>
+   {tasks.length >0? (<Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask}/>):("no more tasks out there")
    
-
+  }
     </div>
   )
-}
 
+  }
 
 export default App
