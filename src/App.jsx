@@ -28,6 +28,13 @@ const App = () => {
     
   ]
  )
+//  add Task
+const addTask = (task)=> {
+  const id = Math.floor(Math.random() *1000)+1
+  console.log(id)
+  const newTask = {id,...task}
+  setTasks([...tasks,newTask])
+}
 //  delete task
    const deleteTask = (id)=>{
     setTasks(tasks.reduce((task)=> task.id!==id))
@@ -45,12 +52,10 @@ const App = () => {
   return (
     <div className='container'>App
   <Header />
-  <AddTask/>
-  {tasks.length > 0 ? (
+  <AddTask onAdd={addTask}/>
+  
    <Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask}/>
-   ):(
-  'No tasks To show'
-  )}
+   
 
     </div>
   )
