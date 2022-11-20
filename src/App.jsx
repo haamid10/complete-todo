@@ -33,11 +33,24 @@ const App = () => {
     setTasks(tasks.reduce((task)=> task.id!==id))
     console.log('delete', id)
    }
+  //  ontoggleReminder
+
+  const toggleReminder =(id)=>{
+
+    setTasks(tasks.map((task)=> task.id === id ? { ...task,  reminder: !task.reminder}: task))
+    console.log(id ,'so')
+
+  }
    
   return (
     <div className='container'>App
-<Header />
-<Tasks tasks={tasks} onDelete={deleteTask}/>
+  <Header />
+  {tasks.length > 0 ? (
+   <Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask}/>
+   ):(
+  'No tasks To show'
+  )}
+
     </div>
   )
 }
