@@ -52,7 +52,7 @@ const addTask = (task)=> {
    
   return (
     <div className='container'>App
-  <Header onAdd={()=>setShowAdd(!showAdd)}/>
+  <Header onAdd={()=>setShowAdd(!showAdd)}   show={showAdd}/>
   {showAdd &&<AddTask onAdd={addTask}/>}
   
    {tasks.length >0? (<Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask}/>):("no more tasks out there")
